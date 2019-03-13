@@ -57,8 +57,10 @@ public class PaletteFragment extends Fragment {
         //set listener for items selected within the spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ((OnFragmentInteractionListener) parent).colorSelected(color_ints[position]);
+            public void onItemSelected(AdapterView<?> parentView, View view, int position, long id) {
+                int colorInt = color_ints[position];
+                System.out.println("The color int picked in PaletteFragment is " + colorInt);
+                ((OnFragmentInteractionListener) parent).colorSelected(colorInt);
             }
 
             @Override

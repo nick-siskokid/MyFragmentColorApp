@@ -14,6 +14,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CanvasFragment extends Fragment {
+    View v;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String COLOR_KEY = "color_key";
@@ -59,7 +60,13 @@ public class CanvasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_canvas, container, false);
+        v = inflater.inflate(R.layout.fragment_canvas, container, false);
+        return v;
+    }
+
+    public void changeFragmentColor(int color){
+        System.out.println("The color int in canvas Fragment is " + color);
+        v.setBackgroundColor(color);
     }
 
 }

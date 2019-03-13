@@ -27,11 +27,14 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.O
                 .add(R.id.container1, paletteFragment)
                 .commit();
 
+        canvasFragment = new CanvasFragment();
 
 
     }
 
     public void colorSelected(int colorInt){
-        
+        System.out.println("The color int in mainActivity is " + colorInt);
+        canvasFragment.changeFragmentColor(colorInt);
+
     }
 }
