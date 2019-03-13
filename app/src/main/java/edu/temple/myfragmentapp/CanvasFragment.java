@@ -20,7 +20,9 @@ public class CanvasFragment extends Fragment {
     private static final String COLOR_KEY = "color_key";
 
 
-    // TODO: Rename and change types of parameters
+    // this was an alternative to the option that was implemented
+    //the color int could have been passed as a parameter to factory method newInstance and assigned here
+    //then this could have been passed to change the layout background color
     private int backgroundColorInt;
 
 
@@ -33,11 +35,11 @@ public class CanvasFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
+     * @param color Parameter 1.
 
      * @return A new instance of fragment CanvasFragment.
      */
-    // TODO: Rename and change types and number of parameters
+
     public static CanvasFragment newInstance(int color) {
         CanvasFragment fragment = new CanvasFragment();
         Bundle args = new Bundle();
@@ -52,8 +54,9 @@ public class CanvasFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             backgroundColorInt = getArguments().getInt(COLOR_KEY);
-
+            //changeFragmentColor(backgroundColorInt);
         }
+
     }
 
     @Override
@@ -65,7 +68,9 @@ public class CanvasFragment extends Fragment {
     }
 
     public void changeFragmentColor(int color){
-        System.out.println("The color int in canvas Fragment is " + color);
+        //test print statement
+        //System.out.println("The color int in canvas Fragment is " + color);
+
         v.setBackgroundColor(color);
     }
 

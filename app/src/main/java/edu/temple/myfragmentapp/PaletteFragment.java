@@ -58,8 +58,11 @@ public class PaletteFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View view, int position, long id) {
+                //grab the integer from the array that corresponds with the color selected in the spinner
                 int colorInt = color_ints[position];
-                System.out.println("The color int picked in PaletteFragment is " + colorInt);
+                //Test print statement
+                //System.out.println("The color int picked in PaletteFragment is " + colorInt);
+                //pass the integer to MainActivity
                 ((OnFragmentInteractionListener) parent).colorSelected(colorInt);
             }
 
@@ -69,15 +72,12 @@ public class PaletteFragment extends Fragment {
             }
         });
 
-
-
-
-
         // Inflate the layout for this fragment
         return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
+    //method is not needed
     /*public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.colorSelected(uri);
@@ -85,6 +85,8 @@ public class PaletteFragment extends Fragment {
     }
     */
     @Override
+
+    //assigns the context of parent activity of the fragment to Context parent object local to PaletteFragment
     public void onAttach(Context context) {
         super.onAttach(context);
         /*if (context instanceof OnFragmentInteractionListener) {
@@ -102,18 +104,9 @@ public class PaletteFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    /*Interface to communicate with MainActivity along with methods the activity possesses */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+
         void colorSelected(int colorInt);
     }
 }

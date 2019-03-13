@@ -9,14 +9,10 @@ import android.widget.TextView;
 public class ColorAdapter extends BaseAdapter {
 
     Context c;
-    //ArrayList<String> al;
+
     String[] s;
-    /*public ColorAdapter(Context c, ArrayList<String> al){
-        this.c = c;
-        //this.al = al;
-        this.s = s;
-    }
-    */
+
+    //color adapter constructor accepts context and string array as parameters
     public ColorAdapter(Context c, String[] s){
         this.c = c;
         this.s = s;
