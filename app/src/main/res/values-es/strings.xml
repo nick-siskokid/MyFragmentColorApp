@@ -1,17 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyFragmentApp</string>
 
     <string-array name="colors_array">
-        <item>red</item>
-        <item>blue</item>
-        <item>cyan</item>
-        <item>green</item>
-        <item>yellow</item>
+        <item>rojo</item>
+        <item>azul</item>
+        <item>cian</item>
+        <item>verde</item>
+        <item>amarillo</item>
         <item>magenta</item>
-        <item>maroon</item>
-        <item>aqua</item>
-        <item>lime</item>
-        <item>purple</item>
+        <item>blanco</item>
+        <item>gris</item>
+        <item>negro</item>
+        <item>gris claro</item>
     </string-array>
 
     <integer-array name="color_ints">
@@ -26,7 +27,4 @@
         <item>-16777216</item>
         <item>-3355444</item>
     </integer-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
