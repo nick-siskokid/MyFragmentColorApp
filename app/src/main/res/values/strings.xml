@@ -8,10 +8,10 @@
         <item>green</item>
         <item>yellow</item>
         <item>magenta</item>
-        <item>maroon</item>
-        <item>aqua</item>
-        <item>lime</item>
-        <item>purple</item>
+        <item>white</item>
+        <item>grey</item>
+        <item>black</item>
+        <item>light grey</item>
     </string-array>
 
     <integer-array name="color_ints">

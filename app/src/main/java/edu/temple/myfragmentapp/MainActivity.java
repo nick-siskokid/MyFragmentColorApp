@@ -1,5 +1,6 @@
 package edu.temple.myfragmentapp;
 
+import android.content.Context;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,8 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.O
 
 
     PaletteFragment paletteFragment;
+    CanvasFragment canvasFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.O
 
     }
 
-    public void onFragmentInteraction(Uri uri){
-
+    public void colorSelected(int colorInt){
+        
     }
 }

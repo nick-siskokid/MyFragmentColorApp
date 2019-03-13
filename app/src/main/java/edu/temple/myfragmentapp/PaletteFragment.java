@@ -22,6 +22,7 @@ public class PaletteFragment extends Fragment {
 
     View v;
     Spinner spinner;
+    Context parent;
     private OnFragmentInteractionListener mListener;
 
     public PaletteFragment() {
@@ -48,13 +49,16 @@ public class PaletteFragment extends Fragment {
         String[] colors = res.getStringArray(R.array.colors_array);
         //get integer values corresponding to color names and store into an integer array
         final int[] color_ints = res.getIntArray(R.array.color_ints);
-        ColorAdapter adapter = new ColorAdapter(getActivity(), colors);
+        ColorAdapter adapter = new ColorAdapter(parent, colors);
         //assign spinner object the inflater view for use
         spinner = v.findViewById(R.id.colorsSpinner);
+        //set the adapter to the spinner
+        spinner.setAdapter(adapter);
         //set listener for items selected within the spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((OnFragmentInteractionListener) parent).colorSelected(color_ints[position]);
             }
 
             @Override
@@ -72,21 +76,22 @@ public class PaletteFragment extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    /*public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.colorSelected(uri);
         }
     }
-
+    */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
+        /*if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
-        }
+        }*/
+        this.parent = context;
     }
 
     @Override
@@ -107,6 +112,6 @@ public class PaletteFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void colorSelected(int colorInt);
     }
 }

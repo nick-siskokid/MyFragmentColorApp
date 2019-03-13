@@ -27,4 +27,7 @@
         <item>-16777216</item>
         <item>-3355444</item>
     </integer-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
